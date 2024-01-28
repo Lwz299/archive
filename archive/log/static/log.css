@@ -1,0 +1,50 @@
+#logo svg {
+    height: 100px;
+    width: 200px;
+}
+
+#logo {
+    background-color: lightgray;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+#login {
+    background-color: #f8f8ff;
+    border-radius: 30px;
+    width: 40%;
+    height: 60vh;
+    text-align: center;
+}
+
+#login form {
+    margin: 30px;
+}
+
+p {
+    font-weight: 600;
+}
+
+h2 {
+    text-align: center;
+    padding: 10px 20px;
+    border-bottom: 1px silver solid;
+}
+
+#register {
+    background-color: #f8f8ff;
+    border-radius: 30px;
+    width: 60%;
+}
+
+#register form {
+    text-align: start;
+}
+
+.helptext {
+    display: none;
+}
+
+input {
+    outline: none;
+}

@@ -1,0 +1,28 @@
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<html>
+<link rel='stylesheet' href="{% static 'log.css' %}">
+<body>
+    {% block content %}
+    <div class="display" >
+<div id="logo" class="container">
+    {% include "logo.html" %}
+</div>
+<div class="container" id="register">
+    <h2>Sign Up</h2>
+<form method="POST" >
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-success">Register</button>
+    <a href="{%url 'login'%}">back to login</a>
+</form>
+</div>
+<div>
+    {% endblock content %}
+
+
+</body>
+</html>
+

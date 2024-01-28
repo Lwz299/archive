@@ -1,0 +1,19 @@
+{% extends "register/register.html" %}
+
+{% block content %}
+<div class="container" id="logo" >
+  {% include "logo.html" %}
+    
+</div>
+  <div class="container"  id="login">
+  <h2>Log In</h2>
+  <form  method="POST">
+   {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit"    class="btn btn-primary ">Log In</button>
+
+   </form>
+   <p>Are you dont have account? <a href="{% url 'register'%}">register</a></p>
+
+  </div>
+{% endblock content %}

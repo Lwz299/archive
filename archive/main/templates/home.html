@@ -1,0 +1,74 @@
+{%load static%}
+
+<html>
+    <link rel='stylesheet' href="{% static 'css/home.css' %}">
+    
+    <link rel='stylesheet' href="{% static 'css/export.css' %}">
+    
+    <head>
+        
+        <title>{% block title %}home{% endblock %}</title>
+         {% load bootstrap5 %}
+        {% bootstrap_css %}
+        {% bootstrap_javascript %}
+       
+      </head> 
+  <nav class="navbar navbar-expand-sm " id="nav" bgcolor="darkgray">
+    <div class="container-fluid" id="home-logo">
+      <a class="navbar-brand" href="javascript:void(0)">{% include "logo.html"%}</a>
+      
+      <div class="collapse navbar-collapse" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'home'%}">home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Import</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'export'%}">Export</a>
+            
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'search'%}">Search</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{%url 'logout'%}">logout</a>
+          </li>
+        </ul>
+        <form class="d-flex" style="margin:0;">
+          <input class="form-control me-2" type="text" placeholder="Search">
+          <button class="btn btn-secondary" type="button">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+     {% block content %}
+     <div id="home">
+        <form method="POST" enctype="multipart/form-data" class="archive">
+          {% csrf_token %}
+          
+           {{form}}
+           <div class="d-grid gap-2 col-6 mx-auto">
+            <button class="btn btn-primary" type="submit" style="margin: 30px 0">Save</button>
+          
+         
+          
+           </form>
+        
+
+    </div>
+    <div id="display-file">
+        <embed src="" id="display">
+    </div>
+   
+    
+</div>
+    {% endblock content %}
+   
+   
+</body>
+ <script src="{% static "/js/home.js" %}">
+   
+ </script>
+</html>
